@@ -7,6 +7,7 @@ function main(data) {
   const totalBarHeight = 200 - 27 - 50;
   const totalSpending = data.reduce((total, item) => total + item.amount, 0);
   const highestAmount = data.reduce((highest, item) => highest > item.amount ? highest : item.amount , 0);
+  // A quick hack to get right day for currentDay
   const currentDay = data.slice(new Date().getDay() - 1)[0].day;
   
   document.getElementById('spending').innerText = `$${totalSpending.toFixed(2)}`;
