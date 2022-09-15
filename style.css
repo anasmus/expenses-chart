@@ -89,6 +89,11 @@ body {
 .bar:hover {
   filter: brightness(120%);
 }
+.top-border {
+  border-top: 1px solid var(--neutral-brown);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
 .finance {
   margin-top: -1rem;
   display: flex;
