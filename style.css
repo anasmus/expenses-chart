@@ -89,18 +89,6 @@ body {
 .bar:hover {
   filter: brightness(120%);
 }
-@media (max-width: 450px) {
-  .bar {
-    width: 30px;
-  }
-  h1 {
-    font-size: 2.3rem;
-  }
-  .amount {
-    font-size: 1.2rem;
-    padding: 0.2rem;
-  }
-}
 .finance {
   margin-top: -1rem;
   display: flex;
@@ -113,4 +101,34 @@ body {
 .previous-spending {
   font-size: 1.4rem;
   text-align: right;
+}
+footer {
+  text-align: center;
+  margin-top: 5rem;
+  color: var(--neutral-dark-brown);
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+.fa-github {
+  color: #333333;
+  font-weight: 400;
+  transition: transform 0.3s ease-in-out;
+}
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+@media (max-width: 450px) {
+  .bar {
+    width: 30px;
+  }
+  h1 {
+    font-size: 2.3rem;
+  }
+  .amount {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+  }
+  footer {
+    font-size: 2rem;
+  }
 }
