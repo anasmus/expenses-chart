@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-red: hsl(10, 79%, 65%);
+  --primary-cyan: hsl(186, 34%, 60%);
+  --neutral-dark-brown: hsl(25, 47%, 15%);
+  --neutral-brown: hsl(28, 10%, 53%);
+  --neutral-cream: hsl(27, 66%, 92%);
+  --neutral-orange: hsl(33, 100%, 98%);
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.8rem;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.5;
+  background-color: var(--neutral-cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  width: 90%;
+  max-width: 500px;
+  min-width: 300px;
+}
+.header {
+  background-color: var(--primary-red);
+  color: var(--neutral-orange);
+  margin-bottom: 3rem;
+  background-image: url('assets/images/logo.svg');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 2rem) center;
+}
+.main {
+  background-color: var(--neutral-orange);
+  color: var(--neutral-brown);
+}
+.main, .header {
+  padding: 2rem;
+  border-radius: 15px;
+}
+.brown-text {
+  font-weight: bold;
+  color: var(--neutral-dark-brown);
+}
+#chart {
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: end;
+  justify-items: center;
+  text-align: center;
+}
+/* bar and its texts are reversed in dom for hover effect see down below */
+.chart-part {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+.amount {
+  background-color: var(--neutral-dark-brown);
+  color: var(--neutral-orange);
+  font-size: 1.6rem;
+  padding: 0.4rem;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  display: none;
+}
+.bar {
+  width: 40px;
+  height: 80px;
+  border-radius: 5px;
+  background-color: var(--primary-red);
+  transition: filter 100ms ease-in-out;
+  cursor: pointer;
+}
+.bar:hover + .amount {
+  display: block;
+}
+.current {
+  background-color: var(--primary-cyan);
+}
+.bar:hover {
+  filter: brightness(120%);
+}
+@media (max-width: 450px) {
+  .bar {
+    width: 30px;
+  }
+  h1 {
+    font-size: 2.3rem;
+  }
+  .amount {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+  }
+}
+.finance {
+  margin-top: -1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#spending {
+  font-size: 5rem;
+}
+.previous-spending {
+  font-size: 1.4rem;
+  text-align: right;
+}
